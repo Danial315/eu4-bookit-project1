@@ -96,6 +96,8 @@ public class ApiStepDefs {
                 "from users\n" +
                 "where email ='"+emailGlobal+"';";
 
+//dbutils mthd getrowmap returns the whole row od kep n valye when v insert query n we saved that data in a map
+        //called row map..n retrive info from that map eg id firstname..but did casting
         Map<String, Object> rowMap = DBUtils.getRowMap(query);
         System.out.println("rowMap = " + rowMap);
         long expectedId = (long) rowMap.get("id");
@@ -106,6 +108,7 @@ public class ApiStepDefs {
         //get information from api
         JsonPath jsonPath = response.jsonPath();
 
+        //if you are comparing both db and API. keep db as expected and API as actual..always 99 percent
         long actualId = jsonPath.getLong("id");
         String actualFirstName = jsonPath.getString("firstName");
         String actualLastName = jsonPath.getString("lastName");
