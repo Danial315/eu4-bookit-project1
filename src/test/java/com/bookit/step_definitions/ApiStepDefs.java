@@ -49,7 +49,7 @@ public class ApiStepDefs {
     public void status_code_should_be(int statusCode) {//this  statuscode is written by myself cz v gv the name to a variable
         //bt actual in feature file its 200..
 
-        //below is the junit assertion so in junit always put expected first and actual on later
+        //below is the junit assertion so in junit always put expected condition/value first and actual on later
         Assert.assertEquals(statusCode,response.statusCode());
 
     }
