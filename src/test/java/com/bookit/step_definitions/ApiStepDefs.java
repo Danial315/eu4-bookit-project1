@@ -23,7 +23,9 @@ public class ApiStepDefs {
     String emailGlobal;
     @Given("I logged Bookit api using {string} and {string}")
     public void i_logged_Bookit_api_using_and(String email, String password) {
-
+//this method generatetoken  from bookitapiutils class returns u final token when u call this method u gv email n password
+        //which here in the project we already have it in confg properties..so aftr gviing email n passwrd v get finl token
+        //n we sv it to string token at line 29..
        token = BookItApiUtils.generateToken(email,password);
         emailGlobal = email;
 
@@ -44,8 +46,10 @@ public class ApiStepDefs {
     }
 
     @Then("status code should be {int}")
-    public void status_code_should_be(int statusCode) {
+    public void status_code_should_be(int statusCode) {//this  statuscode is written by myself cz v gv the name to a variable
+        //bt actual in feature file its 200..
 
+        //below is the junit assertion so in junit always put expected first and actual on later
         Assert.assertEquals(statusCode,response.statusCode());
 
     }
