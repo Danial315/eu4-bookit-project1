@@ -135,7 +135,7 @@ public class ApiStepDefs {
         //UI vs API
         //Create a fullname for api
         String actualFullName = actualFirstName+" "+actualLastName;
-
+//on line 139 expected actualfullname is from api as on line 137 n actual from actualuifullname from line 126
         Assert.assertEquals(actualFullName,actualUIFullName);
         Assert.assertEquals(actualRole,actualUIRole);
 

@@ -21,6 +21,9 @@ Feature: User Verification
     And I get the current user information from api
     Then UI,API and Database user information must be match
 
+
+     #with scenario outline u need to mention always examples: (line 34) .. n here we use it for
+     # more than one email/password
   @wip @db
   Scenario Outline:  three point verification(UI,DATABASE,API) DDF
     Given user logs in using "<email>" "<password>"
